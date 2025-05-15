@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Бесплатная AML проверка крипты. Профессиональная очистка криптовалюты от AML меток. Обмен без верификации с высокими резервами в Hell Change.">
+    <meta name="keywords" content="aml проверка крипты, очистка криптовалюты, aml метки, обмен без верификации, криптообменник, hell change, проверка криптовалюты">
+    <title>AML проверка крипты | Бесплатная проверка и очистка | Hell Change</title>
+    <style>
+        :root {
+            --primary-color: #1a1a2e;
+            --secondary-color: #16213e;
+            --accent-color: #ff304f;
+            --text-color: #e1e1e1;
+            --light-text: #a7a7a7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--secondary-color);
+            padding: 20px 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
+        }
+        
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            color: var(--light-text);
+            margin-bottom: 40px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 48, 79, 0.3);
+        }
+        
+        .features {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background-color: var(--secondary-color);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .how-it-works {
+            padding: 80px 0;
+            background-color: var(--secondary-color);
+        }
+        
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .step {
+            flex-basis: 30%;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .faq {
+            padding: 80px 0;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            background-color: rgba(22, 33, 62, 0.5);
+            padding: 20px;
+            display: none;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 20px;
+        }
+        
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--light-text);
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .copyright {
+            color: var(--light-text);
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+            
+            .steps {
+                flex-direction: column;
+            }
+            
+            .step {
+                margin-bottom: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Хедер с навигацией -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">Hell Change</a>
+            <nav>
+                <ul>
+                    <li><a href="#features">Преимущества</a></li>
+                    <li><a href="#how-it-works">Как это работает</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact" class="cta-button">Начать проверку</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Главный экран -->
+    <section class="hero">
+        <div class="container">
+            <h1>AML проверка крипты</h1>
+            <p class="subtitle">Бесплатная проверка и профессиональная очистка криптовалюты от AML-меток для безопасных транзакций</p>
+            <a href="#contact" class="cta-button">Проверить свою криптовалюту</a>
+        </div>
+    </section>
+    
+    <!-- Особенности сервиса -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Преимущества Hell Change</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Бесплатная AML проверка</h3>
+                    <p>Мгновенно проверяйте ваши адреса и транзакции на наличие AML-меток без оплаты и регистрации.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Профессиональная очистка</h3>
+                    <p>Эффективные методы удаления и очистки криптовалюты от нежелательных AML-меток.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Обмен без верификации</h3>
+                    <p>Быстрый и анонимный обмен различных криптовалют без необходимости верификации личности.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Огромные резервы</h3>
+                    <p>Всегда доступные средства для обмена в любых объемах благодаря крупнейшим в индустрии резервам.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Мгновенные транзакции</h3>
+                    <p>Максимально быстрая обработка всех операций с минимальными задержками.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Полная анонимность</h3>
+                    <p>Гарантия конфиденциальности всех операций и пользовательских данных.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Как это работает -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Как работает AML проверка крипты</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Запрос на проверку</h3>
+                    <p>Введите адрес криптовалюты или хеш транзакции для бесплатной AML проверки.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Анализ данных</h3>
+                    <p>Наша система проверяет наличие AML-меток в базах данных и блокчейне.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Получение результата</h3>
+                    <p>Мгновенный отчет о статусе проверяемых средств и рекомендации по дальнейшим действиям.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Часто задаваемые вопросы</h2>
+            <div class="faq-item">
+                <div class="faq-question">Что такое AML проверка криптовалюты?</div>
+                <div class="faq-answer">
+                    <p>AML проверка криптовалюты — это процесс выявления меток и связей с потенциально незаконными транзакциями, которые могут создавать проблемы при последующем использовании средств. Наш сервис позволяет определить наличие таких меток и предложить решения по их устранению.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Как проводится очистка криптовалюты от AML-меток?</div>
+                <div class="faq-answer">
+                    <p>Очистка криптовалюты от AML-меток происходит через серию специализированных транзакций через различные протоколы и обменники, что позволяет разорвать связь с проблемными адресами и транзакциями. Hell Change использует продвинутые методы для обеспечения максимальной эффективности очистки.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Почему важно проверять криптовалюту на наличие AML-меток?</div>
+                <div class="faq-answer">
+                    <p>Криптовалюта с AML-метками может быть заблокирована на централизованных биржах, отклонена обменниками или вызвать вопросы у финансовых регуляторов. Предварительная проверка позволяет избежать потенциальных проблем и защитить ваши активы.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Безопасно ли использовать сервис обмена без верификации?</div>
+                <div class="faq-answer">
+                    <p>Да, наш сервис обмена без верификации полностью безопасен. Мы используем передовые технологии шифрования и безопасности, чтобы защитить все транзакции и пользовательские данные. Отсутствие верификации никак не влияет на безопасность обмена, но значительно повышает его приватность.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Какие криптовалюты поддерживает Hell Change?</div>
+                <div class="faq-answer">
+                    <p>Hell Change поддерживает широкий спектр криптовалют, включая Bitcoin, Ethereum, Litecoin, Monero, Dash, Zcash и многие другие. Наш сервис постоянно обновляет список поддерживаемых валют, чтобы соответствовать потребностям пользователей.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Призыв к действию -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <h2 class="section-title">Начните бесплатную AML проверку прямо сейчас</h2>
+            <p class="subtitle">Получите мгновенный анализ ваших криптоактивов и профессиональную консультацию</p>
+            <a href="#" class="cta-button">Проверить криптовалюту</a>
+        </div>
+    </section>
+    
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">О нас</a>
+                <a href="#">Условия использования</a>
+                <a href="#">Политика конфиденциальности</a>
+                <a href="#">Контакты</a>
+                <a href="#">Поддержка</a>
+            </div>
+            <p class="copyright">© 2025 Hell Change. Все права защищены.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
